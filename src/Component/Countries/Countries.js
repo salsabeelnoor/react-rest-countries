@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Country from '../Country/Country';
 import './Countries.css'
+import { useLoaderData } from 'react-router-dom';
 
 const Countries = () => {
-    const [countries, setCountries] = useState([]);
-  useEffect(() => {
-    fetch('https://restcountries.com/v3.1/all')
-    .then(res => res.json())
-    .then(data => setCountries(data))
-  } ,[])
+    const countries = useLoaderData();
     return (
         <div >
        <h1>Visiting Every Country of the world!!!</h1>
